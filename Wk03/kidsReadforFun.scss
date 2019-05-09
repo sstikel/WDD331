@@ -1,0 +1,115 @@
+//Compile:
+//sass styles.scss styles.css
+
+//compile-auto:
+//sass --watch styles.scss:styles.css
+
+@import url('https://fonts.googleapis.com/css?family=Lora');
+$color-blue: #6495ED;
+$color-tan: #FAEBD7;
+
+
+header {
+  background-color: $color-blue;
+}
+
+p {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+main {
+  background-color: $color-tan;
+}
+
+h1 {
+  font-family: 'Lora', serif;
+}
+
+h2 {
+  font-family: 'Lora', serif;
+}
+
+/* Navigation Links */
+header a:link {
+  color: #FAEBD7;
+  text-decoration: none;
+}
+
+header a:visited {
+  color: #FAEBD7;
+  text-decoration: none;
+}
+
+header a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+header a:active {
+  color: #DEB887;
+  text-decoration: none;
+}
+
+/* Other Page Links */
+a:link {
+  color: $blue-color;
+  text-decoration: none;
+}
+
+a:visited {
+  color: $blue-color;
+  text-decoration: none;
+}
+
+a:hover {
+  
+  text-decoration: underline;
+}
+
+a:active {
+  color: #DEB887;
+  text-decoration: none;
+}
+
+/* Article Title Links */
+main h2 a:link {
+  color: black;
+  text-decoration: none;
+}
+
+main h2 a:visited {
+  color: black;
+  text-decoration: none;
+}
+
+main h2 a:hover {
+  color: $blue-color;
+  text-decoration: underline;
+}
+
+main h2 a:active {
+  color: #DEB887;
+  text-decoration: none;
+}
+
+
+/*Small Screen*/
+@media only screen and (max-width: 400px) {
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+}
+
+/*Large Screen*/
+@media only screen and (min-width: 401px) {
+  header {
+    position: fixed;
+    left: 0;
+    height: 100%;
+  }
+  body {
+    position: relative;
+  }
+}
