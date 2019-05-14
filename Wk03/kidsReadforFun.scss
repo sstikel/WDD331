@@ -5,12 +5,18 @@
 //sass --watch styles.scss:styles.css
 
 @import url('https://fonts.googleapis.com/css?family=Lora');
+
+//vars
 $color-blue: #6495ED;
 $color-tan: #FAEBD7;
+$color-tan-darker: #DEB887;
 
-
-header {
-  background-color: $color-blue;
+//mixins
+@mixin link-standard {
+  &:link, &:visited {
+    text-decoration: none;
+    @content;
+  } 
 }
 
 p {
@@ -21,75 +27,77 @@ main {
   background-color: $color-tan;
 }
 
-h1 {
+h1, h2 {
   font-family: 'Lora', serif;
 }
 
-h2 {
-  font-family: 'Lora', serif;
-}
 
 /* Navigation Links */
-header a:link {
-  color: #FAEBD7;
-  text-decoration: none;
-}
+header {
+  background-color: $color-blue;
+  li {
+    list-style-type: none;
+    text-align: right;
+  }
+  a {
+    @include link-standard {
+      color: $color-tan;
+    }
 
-header a:visited {
-  color: #FAEBD7;
-  text-decoration: none;
-}
-
-header a:hover {
-  color: white;
-  text-decoration: underline;
-}
-
-header a:active {
-  color: #DEB887;
-  text-decoration: none;
+    &:hover {
+      color: white;
+      text-decoration: underline;
+    }
+    
+    &:active {
+      color: $color-tan-darker;
+      text-decoration: none;
+    } 
+    
+  }
 }
 
 /* Other Page Links */
-a:link {
-  color: $blue-color;
-  text-decoration: none;
-}
+a {
+  &:link {
+    color: $color-blue;
+    
+  }
 
-a:visited {
-  color: $blue-color;
-  text-decoration: none;
-}
+  &:visited {
+    color: $color-blue;
+    text-decoration: none;
+  }
 
-a:hover {
-  
-  text-decoration: underline;
-}
+  &:hover {
+    
+    text-decoration: underline;
+  }
 
-a:active {
-  color: #DEB887;
-  text-decoration: none;
+  &:active {
+    color: $color-tan-darker;
+    text-decoration: none;
+  }
 }
 
 /* Article Title Links */
-main h2 a:link {
-  color: black;
-  text-decoration: none;
-}
+main {
+  h2 a {
+    @include link-standard {
+      color: black;
+    }
 
-main h2 a:visited {
-  color: black;
-  text-decoration: none;
-}
+    &:hover {
+      color: $color-blue;
+      text-decoration: underline;
+    }
 
-main h2 a:hover {
-  color: $blue-color;
-  text-decoration: underline;
-}
+    &:active {
+      color: $color-tan-darker;
+      text-decoration: none;
+    }
 
-main h2 a:active {
-  color: #DEB887;
-  text-decoration: none;
+  }
 }
 
 
@@ -98,7 +106,15 @@ main h2 a:active {
   header {
     position: fixed;
     top: 0;
-    width: 100%;
+    width: 90%;
+    padding: 5%;
+    
+  }
+
+  body {
+    margin: 0;
+    position: absolute;
+    top: 29%;
   }
 }
 
@@ -108,8 +124,12 @@ main h2 a:active {
     position: fixed;
     left: 0;
     height: 100%;
+    padding: 5%;
+    
   }
   body {
     position: relative;
+    left: 29%;
+    margin: 0;
   }
 }
